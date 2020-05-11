@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Prism;
+using Prism.Ioc;
 using UIKit;
 
 namespace DemoPrism.iOS
@@ -23,9 +25,17 @@ namespace DemoPrism.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+            LoadApplication(new App(new iosInitializer()));
 
             return base.FinishedLaunching(app, options);
         }
     }
+    public class iosInitializer : IPlatformInitializer
+    {
+        public void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+           
+        }
+    }
+
 }
