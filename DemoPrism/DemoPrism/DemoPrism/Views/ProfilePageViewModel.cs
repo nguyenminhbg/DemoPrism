@@ -24,7 +24,7 @@ namespace DemoPrism.Views
         public void OnNavigatedTo(INavigationParameters parameters)
         {
            // _dialogService.DisplayAlertAsync("Check", "This is Notication to noty team member", "Ok");
-            navigationService.NavigateAsync("DetailPage");
+           // navigationService.NavigateAsync("DetailPage");
         }
     }
 }

@@ -1,8 +1,4 @@
 ﻿using Prism.Navigation;
-using Prism.Unity;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DemoPrism.ViewModels
@@ -22,7 +18,7 @@ namespace DemoPrism.ViewModels
         public async void OnNavigatedTo(INavigationParameters parameters)
         {
            await Task.Delay(3000);
-            navigationService.GoBackToRootAsync();
+           await navigationService.GoBackToRootAsync();
         }
     }
 }

@@ -1,12 +1,12 @@
-﻿using DemoPrism.ViewModels;
+﻿using DemoPrism.IServices;
+using DemoPrism.Services;
+using DemoPrism.ViewModels;
 using DemoPrism.Views;
+using DryIoc;
 using Prism;
+using Prism.DryIoc;
 using Prism.Ioc;
-using Prism.Mvvm;
-using Prism.Unity;
-using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace DemoPrism
 {
@@ -19,16 +19,17 @@ namespace DemoPrism
         protected override void OnInitialized()
         {
             InitializeComponent();
-            NavigationService.NavigateAsync("Navigation/MainPage");
+            NavigationService.NavigateAsync("Navigation/LoginPage");
         }
-        
+        IContainer container;
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>("Navigation");
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<ProfilePage, ProfilePageViewModel>();
             containerRegistry.RegisterForNavigation<DetailPage, DetailPageViewModel>();
-
+            containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
+            containerRegistry.Register<ILoginService, LoginService>();
         }
 
     }

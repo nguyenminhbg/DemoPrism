@@ -126,7 +126,10 @@
     <PackageReference Include="Autofac">
       <Version>5.1.4</Version>
     </PackageReference>
-    <PackageReference Include="Prism.Unity.Forms">
+    <PackageReference Include="Plugin.FacebookClient">
+      <Version>2.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Prism.DryIoc.Forms">
       <Version>7.2.0.1422</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
